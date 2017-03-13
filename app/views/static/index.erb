@@ -1,6 +1,49 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
-<form action="" method="">
-<input type="text" name="long_url">
-<input type="submit">
-</form>
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/application.css">
+    <title>v.l.bitly</title>
+  </head>
+
+
+
+    <h1>v.l.bitly</h1>
+
+    <h2>SIZE DOESN'T MATTER. SO KEEP IT SHORT!</h2>
+
+    <h3>Paste a link to shorten it</h3>
+
+    <form action="/urls" method="post">
+      <input type="text" name="long_url">
+      <input type="submit" value="SHORTEN">
+    </form>
+
+    <div class="recent_list">
+
+      <p>These are your shorten URLs!!! =)</p>
+
+        <table class="table table_hover">
+          <thead>
+            <tr>
+              <th>Long URL</th>
+              <th>Shorten URL</th>
+              <th>Visit Count</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @urls.each do |url| %>
+            <tr>
+              <td><%= url.long_url %></td>
+              <td><a href="http://localhost:9393/<%= url.short_url%>"> http://v.l.ty/<%= url.short_url%> </a></td>
+                <!-- url.long_url %>"><%= url.short_url %></a></td> -->
+              <td><%= url.click_count%></td>
+            </tr>
+            <% end %>
+
+          </tbody>
+        </table>
+    </div>
+</html>

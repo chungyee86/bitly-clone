@@ -1,0 +1,13 @@
+body{
+  background-image:
+  linear-gradient(
+		rgba(0, 0, 0, 0.75),
+		rgba(0, 0, 0, 0.01)
+    ),
+    url(../img/smile_lady.jpg);
+  background-size: cover;
+}
+
+h1{
+  text-align: center;
+}
